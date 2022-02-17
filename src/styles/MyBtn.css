@@ -1,0 +1,25 @@
+.MyBtn {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  white-space: nowrap;
+  font-family: 'Hi Melody', cursive;
+}
+
+.MyBtn_default {
+  background-color: #ececec;
+  color: #000;
+}
+
+.MyBtn_POSITIVE {
+  background-color: #2679F2;
+  color: #fff;
+}
+
+.MyBtn_NEGATIVE {
+  background-color: #F84949;
+  color: #fff;
+}
+
