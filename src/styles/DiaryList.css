@@ -1,0 +1,38 @@
+.control-wrapper {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.left_menu {
+  display: flex;
+}
+
+.right_menu {
+  flex-grow: 1;
+}
+
+.right_menu button {
+  width: 100%;
+  background-color: #DB7093;
+  color: #fff;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.right_menu button:hover {
+  background-color: #f579a3;
+}
+
+.control-menu select {
+  margin-right: 10px;
+  border: 0;
+  border-radius: 10px;
+  background-color: #ececec;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Hi Melody', cursive;
+  font-size: 20px;
+}

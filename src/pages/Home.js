@@ -1,14 +1,14 @@
 import React, { useState, useContext, useEffect } from 'react';
-import MyHeader from '../components/MyHeader';
-import MyBtn from '../components/MyBtn';
-import DiaryList from '../components/DiaryList';
-import { DiaryStateContext } from '../App';
+import MyHeader from 'components/MyHeader';
+import MyBtn from 'components/MyBtn';
+import DiaryList from 'components/DiaryList';
+import { DiaryStateContext } from 'App';
 
 const Home = () => {
   const diaryList = useContext(DiaryStateContext);
 
   const [data, setDate] = useState([]);
-  const [currentDate, setCurrentDate] = useState(new Date())
+  const [currentDate, setCurrentDate] = useState(new Date()); // 기본값 현재 시간
 
   useEffect(() => {
     if (diaryList.length > 0) {
@@ -55,7 +55,7 @@ const Home = () => {
         leftChild={<MyBtn text={"<"} onClick={decreaseMonth} />}
         rightChild={<MyBtn text={">"} onClick={increaseMonth} />}
       />
-      <DiaryList diaryList={diaryList} />
+      <DiaryList diaryList={diaryList} className="diary-list" />
     </div>
   )
 }
