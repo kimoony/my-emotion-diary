@@ -19,12 +19,28 @@ header div {
   width: 25%;
   justify-content: flex-start;
 }
+.head_btn_left button {
+  transition: all .5s;
+}
+.head_btn_left button:hover {
+  background-color: #b3b3b3;
+  color: #fff;
+  transition: all .5s;
+}
 
 .head_btn_right {
   width: 25%;
   justify-content: flex-end;
 }
+.head_btn_right button {
+  transition: all .5s;
+}
+.head_btn_right button:hover {
+  background-color: #b3b3b3;
+  color: #fff;
+  transition: all .5s;
+}
 
-headr button {
+header button {
   font-family: 'Hi Melody', cursive;
 }

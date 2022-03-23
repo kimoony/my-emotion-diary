@@ -5,6 +5,8 @@
 @import './styles/New.css';
 @import './styles/Edit.css';
 @import './styles/Diary.css';
+@import './styles/DiaryEditor.css';
+@import './styles/EmotionItem.css';
 
 body {
   background-color: #f6f6f6;

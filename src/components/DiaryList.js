@@ -85,7 +85,7 @@ const DiaryList = ({ diaryList }) => {
         </div>
         <div className="right_menu">
           <MyBtn
-            type={'positive'}
+            type={'POSITIVE'}
             text={'새 일기쓰기'}
             onClick={() => navigate('/new')}
           />

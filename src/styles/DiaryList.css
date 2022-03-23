@@ -16,14 +16,16 @@
 
 .right_menu button {
   width: 100%;
-  background-color: #DB7093;
+  /* background-color: #DB7093; */
   color: #fff;
   border-radius: 10px;
   font-weight: bold;
+  transition: all .5s;
 }
 
 .right_menu button:hover {
-  background-color: #f579a3;
+  background-color: #4FA4F7;
+  transition: all .5s;
 }
 
 .control-menu select {

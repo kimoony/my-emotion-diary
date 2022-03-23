@@ -55,3 +55,11 @@
 .btn_wrapper {
   min-width: 70px;
 }
+.btn_wrapper button {
+  transition: all .5s;
+}
+.btn_wrapper button:hover {
+  background-color: #b3b3b3;
+  color: #fff;
+  transition: all .5s;
+}
