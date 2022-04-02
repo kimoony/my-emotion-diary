@@ -22,6 +22,7 @@ const Edit = () => {
         setOriginData(targetDiary)
       } else {
         navigate('/', { replace: true })
+        alert("없는 일기 입니다.")
       }
     }
   }, [id, diaryList])

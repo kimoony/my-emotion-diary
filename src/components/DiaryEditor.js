@@ -1,51 +1,13 @@
-import React, { useState, useRef, useContext, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useState, useRef, useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { DiaryDispatchContext } from '../App';
-import MyBtn from './MyBtn'
-import MyHeader from './MyHeader'
-import '../styles/DiaryEditor.css'
-import EmotionItem from './EmotionItem'
+import MyBtn from './MyBtn';
+import MyHeader from './MyHeader';
+import 'styles/DiaryEditor.css';
+import EmotionItem from './EmotionItem';
+import { getStringDate } from 'util/date';
+import { emotionList } from 'util/emotion';
 
-
-const env = process.env;
-env.PUBLIC_URL = env.PUBLIC_URL || ""
-
-// 감정 선택을 위한 emotionList
-const emotionList = [
-  {
-    emotion_id: 1,
-    emotion_img: process.env.PUBLIC_URL + `/assets/emotion1.png`,
-    emotion_descript: "완전 좋음"
-  },
-  {
-    emotion_id: 2,
-    emotion_img: process.env.PUBLIC_URL + `/assets/emotion2.png`,
-    emotion_descript: "좋음"
-  },
-  {
-    emotion_id: 3,
-    emotion_img: process.env.PUBLIC_URL + `/assets/emotion3.png`,
-    emotion_descript: "그럴저럭"
-  },
-  {
-    emotion_id: 4,
-    emotion_img: process.env.PUBLIC_URL + `/assets/emotion4.png`,
-    emotion_descript: "나쁨"
-  },
-  {
-    emotion_id: 5,
-    emotion_img: process.env.PUBLIC_URL + `/assets/emotion5.png`,
-    emotion_descript: "끔찍함"
-  },
-]
-
-// 일기를 쓸 때 항상 오늘 날짜를 보여주기 위한 getStringDate
-const getStringDate = (date) => {
-  // toISOString 메소드는 ISO 형식의 문자열을 반환한다.
-  // YYYY-MM-DDTHH:mm:ss.sssZ 또는 ±YYYYYY-MM-DDTHH:mm:ss.sssZ 이런형식으로 보여짐
-  // 필요한건 YYYY-MM-DD 이기 때문에 slice를 사용해 짤라준다.
-  return date.toISOString().slice(0, 10);
-}
 
 function DiaryEditor({ isEdit, originData }) {
   const navigate = useNavigate()
