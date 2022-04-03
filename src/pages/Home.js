@@ -21,6 +21,9 @@ const Home = () => {
         currentDate.getFullYear(),
         currentDate.getMonth() + 1,
         0,
+        23,
+        59,
+        59
       ).getTime()
 
       setDate(diaryList.filter((it) => firstDay <= it.date && it.date <= lastDay))

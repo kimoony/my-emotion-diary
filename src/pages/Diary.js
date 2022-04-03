@@ -4,7 +4,6 @@ import { DiaryStateContext } from '../App';
 import { getStringDate } from 'util/date';
 import MyBtn from 'components/MyBtn';
 import MyHeader from 'components/MyHeader';
-import EmotionItem from 'components/EmotionItem';
 import { emotionList } from 'util/emotion';
 import 'styles/Diary.css';
 
