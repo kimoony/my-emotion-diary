@@ -7,11 +7,13 @@ import { DiaryStateContext } from 'App';
 const Home = () => {
   const diaryList = useContext(DiaryStateContext);
 
-  const [data, setDate] = useState([]);
+  const [data, setData] = useState([]);
   const [currentDate, setCurrentDate] = useState(new Date()); // 기본값 현재 시간
 
+  const headText = `${currentDate.getFullYear()}년 ${currentDate.getMonth() + 1}월`
+
   useEffect(() => {
-    if (diaryList.length > 0) {
+    if (diaryList.length >= 1) {
       const firstDay = new Date(
         currentDate.getFullYear(),
         currentDate.getMonth(),
@@ -26,7 +28,11 @@ const Home = () => {
         59
       ).getTime()
 
-      setDate(diaryList.filter((it) => firstDay <= it.date && it.date <= lastDay))
+      setData(diaryList.filter((it) =>
+        firstDay <= it.date && it.date <= lastDay)
+      )
+    } else {
+      setData([])
     }
   }, [diaryList, currentDate]);
 
@@ -34,7 +40,6 @@ const Home = () => {
     console.log(data)
   }, [data])
 
-  const headText = `${currentDate.getFullYear()}년 ${currentDate.getMonth() + 1}월`
 
   const increaseMonth = () => {
     setCurrentDate(new Date(
@@ -58,7 +63,7 @@ const Home = () => {
         leftChild={<MyBtn text={"<"} onClick={decreaseMonth} />}
         rightChild={<MyBtn text={">"} onClick={increaseMonth} />}
       />
-      <DiaryList diaryList={diaryList} className="diary-list" />
+      <DiaryList diaryList={data} className="diary-list" />
     </div>
   )
 }

@@ -15,7 +15,7 @@ const filterOptionList = [
   { value: "bad", name: "나쁜 감정" },
 ];
 
-const ControlMenu = ({ value, onChange, optionList }) => {
+const ControlMenu = React.memo(({ value, onChange, optionList }) => {
   return (
     <div className="control-menu">
       <select value={value} onChange={(e) => onChange(e.target.value)}>
@@ -27,8 +27,7 @@ const ControlMenu = ({ value, onChange, optionList }) => {
       </select>
     </div>
   );
-};
-
+});
 
 
 const DiaryList = ({ diaryList }) => {
@@ -92,9 +91,11 @@ const DiaryList = ({ diaryList }) => {
         </div>
       </div>
       <>
-        {getProcessedDiaryList().map((it) => (
-          <DiaryItem key={it.id} {...it} />
-        ))}
+        {
+          getProcessedDiaryList().map((it) => (
+            <DiaryItem key={it.id} {...it} />
+          ))
+        }
       </>
     </div>
   );

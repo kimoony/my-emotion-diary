@@ -1,7 +1,13 @@
 import React from 'react'
 import "styles/EmotionItem.css";
 
-function EmotionItem({ emotion_id, emotion_img, emotion_descript, handleClickEmote, isSelected }) {
+function EmotionItem({
+  emotion_id,
+  emotion_img,
+  emotion_descript,
+  handleClickEmote,
+  isSelected
+}) {
   return (
     <div
       className={[
@@ -16,4 +22,4 @@ function EmotionItem({ emotion_id, emotion_img, emotion_descript, handleClickEmo
   )
 }
 
-export default EmotionItem
+export default React.memo(EmotionItem)

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/DiaryItem.css';
+import 'styles/DiaryItem.css';
 import MyBtn from './MyBtn';
 import { useNavigate } from 'react-router-dom';
 
@@ -43,4 +43,4 @@ function DiaryItem({ id, emotion, content, date }) {
   )
 }
 
-export default DiaryItem
+export default React.memo(DiaryItem)
