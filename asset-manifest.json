@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/my-emotion-diary/static/css/main.b9420baa.css",
+    "main.js": "/my-emotion-diary/static/js/main.fda09738.js",
+    "index.html": "/my-emotion-diary/index.html",
+    "main.b9420baa.css.map": "/my-emotion-diary/static/css/main.b9420baa.css.map",
+    "main.fda09738.js.map": "/my-emotion-diary/static/js/main.fda09738.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b9420baa.css",
+    "static/js/main.fda09738.js"
+  ]
+}
