@@ -13,6 +13,11 @@ const Home = () => {
   const headText = `${currentDate.getFullYear()}년 ${currentDate.getMonth() + 1}월`
 
   useEffect(() => {
+    const titleEl = document.querySelector('title');
+    titleEl.innerText = `감정 일기장`;
+  }, [])
+
+  useEffect(() => {
     if (diaryList.length >= 1) {
       const firstDay = new Date(
         currentDate.getFullYear(),

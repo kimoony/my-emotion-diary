@@ -15,6 +15,11 @@ const Diary = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
+    const titleEl = document.querySelector('title');
+    titleEl.innerText = `감정 일기장 - ${id}번 일기`;
+  }, [])
+
+  useEffect(() => {
     if (diaryList.length >= 1) {
       const targetDiary = diaryList.find((it) => parseInt(it.id) === parseInt(id))
       // console.log(targetDiary);

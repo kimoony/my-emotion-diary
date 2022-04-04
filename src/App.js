@@ -1,6 +1,6 @@
 import React, { useReducer, useRef, useEffect } from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Home from 'pages/Home';
 import New from 'pages/New';
 import Edit from 'pages/Edit';
@@ -49,9 +49,11 @@ function App() {
     if (localData) {
       const diaryList = JSON.parse(localData).sort((a, b) =>
         parseInt(b.id) - parseInt(a.id));
-      dataId.current = parseInt(diaryList[0].id) + 1;
 
-      dispatch({ type: "INIT", data: diaryList })
+      if (diaryList.length >= 1) {
+        dataId.current = parseInt(diaryList[0].id) + 1;
+        dispatch({ type: "INIT", data: diaryList })
+      }
     }
   }, [])
 
@@ -92,7 +94,7 @@ function App() {
   return (
     <DiaryStateContext.Provider value={data}>
       <DiaryDispatchContext.Provider value={{ onCreate, onRemove, onEdit }}>
-        <BrowserRouter>
+        <HashRouter>
           <div className="App">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -101,7 +103,7 @@ function App() {
               <Route path="/diary/:id" element={<Diary />} />
             </Routes>
           </div>
-        </BrowserRouter>
+        </HashRouter>
       </DiaryDispatchContext.Provider>
     </DiaryStateContext.Provider>
   );
